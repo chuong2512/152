@@ -358,13 +358,13 @@ public class MenuScript : Singleton<MenuScript>
     {
         int c = PlayerPrefs.GetInt("Coins");
 
-        GlobalGameHandler.coins += c + coin;
+        GlobalGameHandler.coins = c + coin;
         CoinsText.text = GlobalGameHandler.coins.ToString();
         CoinsText1.text = GlobalGameHandler.coins.ToString();
         CoinsText2.text = GlobalGameHandler.coins.ToString();
-        CoinsText3.text = PlayerPrefs.GetInt("Coins").ToString();
+        CoinsText3.text = GlobalGameHandler.coins.ToString();
 
-        PlayerPrefs.SetInt("Coins", c);
+        PlayerPrefs.SetInt("Coins", GlobalGameHandler.coins);
     }
 
     public void OnballSelection()
